@@ -9,7 +9,7 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install wget git
 
 RUN mkdir -p "${ANDROID_HOME}/licenses"
-RUN wget ${ANDROID_SDK_URL} \
+RUN wget ${ANDROID_SDK_URL} \d
     -O sdk.zip \
     && unzip sdk.zip -d ${ANDROID_HOME} \
     && rm sdk.zip
@@ -23,4 +23,6 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager --verbose \
 
 WORKDIR /android/src
 
-ENTRYPOINT ./gradlew clean
+RUN groupadd -g 995 jenkins
+RUN useradd -u 997 -s "/bin/bash" -g jenkins jenkins
+RUN usermod -aG sudo

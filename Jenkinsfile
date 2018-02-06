@@ -23,8 +23,10 @@ pipeline {
               }
         }
         steps {
-              sh "git clone https://github.com/codepath/android_hello_world.git"
-              sh "android_hello_world/gradlew assembleRelease"
+          dir('/android/src'){
+            sh "git clone https://github.com/codepath/android_hello_world.git"
+            sh "./gradlew assembleRelease"
+          }
         }
       }
     }

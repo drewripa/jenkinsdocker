@@ -25,7 +25,7 @@ RUN echo ${ANDROID_SDK_LICENSE} > "${ANDROID_HOME}/licenses/android-sdk-license"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager --verbose \
     "platform-tools"
 
-RUN chown -R jenkins:jenkins /androidhome && chown -R jenkins:jenkins /android
+RUN chown -R jenkins:jenkins /androidhome 
 
 USER jenkins
 

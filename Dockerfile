@@ -14,7 +14,8 @@ ENV ANDROID_SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-38
 ENV ANDROID_SDK_LICENSE="\nd56f5187479451eabf01fb78af6dfcb131a6481e"
 ENV ANDROID_HOME=/androidhome
 
-RUN mkdir -p "${ANDROID_HOME}/licenses"
+RUN mkdir -p "${ANDROID_HOME}/licenses" \
+    && mkdir -p /android/src
 RUN wget ${ANDROID_SDK_URL} \
     -O sdk.zip \
     && unzip sdk.zip -d ${ANDROID_HOME} \
@@ -25,7 +26,8 @@ RUN echo ${ANDROID_SDK_LICENSE} > "${ANDROID_HOME}/licenses/android-sdk-license"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager --verbose \
     "platform-tools"
 
-RUN chown -R jenkins:jenkins /androidhome 
+RUN chown -R jenkins:jenkins /androidhome \
+    && chown -R jenkins:jenkins /android/src
 
 USER jenkins
 

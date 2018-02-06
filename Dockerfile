@@ -5,7 +5,7 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install wget git
 
 RUN groupadd -g 995 jenkins
-RUN useradd -u 997 -s "/bin/bash" -g jenkins jenkins
+RUN useradd -m -u 997 -s "/bin/bash" -g jenkins jenkins
 
 ENV ANDROID_SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip"
 ENV ANDROID_SDK_LICENSE="\nd56f5187479451eabf01fb78af6dfcb131a6481e"

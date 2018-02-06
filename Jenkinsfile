@@ -19,7 +19,6 @@ pipeline {
         agent {
               docker {
                     image "androiddrew:latest"
-                    args "-w /android/src"
                     label 'master'
               }
         }

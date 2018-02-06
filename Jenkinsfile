@@ -11,7 +11,7 @@ pipeline {
         agent any
         steps {
           sh "docker build \
-              -t jenkinsdrew:latest \
+              -t androiddrew:latest \
               ."
         }
       }

@@ -23,9 +23,9 @@ pipeline {
               }
         }
         steps {
-            sh "git clone https://github.com/codepath/android_hello_world.git `pwd`"
-            sh "./gradlew assembleRelease"
-            sh "rm -rf *"
+            sh "git clone https://github.com/codepath/android_hello_world.git "
+            sh "cd android_hello_world && pwd && ./gradlew assembleRelease"
+            sh "rm -rf android_hello_world"
         }
       }
     }

@@ -3,8 +3,8 @@ MAINTAINER Andrew Ripa <ripa.andrew@gmail.com>
 
 USER root
 
-RUN sudo apt-get -y update && sudo apt-get -y upgrade
-RUN sudo apt-get -y install wget git sudo
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y install wget git sudo
 
 RUN groupadd -g 995 jenkins
 RUN useradd -u 997 -s "/bin/bash" -g jenkins jenkins

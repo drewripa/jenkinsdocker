@@ -30,7 +30,7 @@ RUN echo ${ANDROID_SDK_LICENSE} > "${ANDROID_HOME}/licenses/android-sdk-license"
 
 USER jenkins
 
-RUN ${ANDROID_HOME}/tools/bin/sdkmanager --verbose \
+RUN sudo ${ANDROID_HOME}/tools/bin/sdkmanager --verbose \
     "platform-tools"
 
 WORKDIR /android/src

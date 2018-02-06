@@ -9,7 +9,7 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install wget git
 
 RUN mkdir -p "${ANDROID_HOME}/licenses"
-RUN wget ${ANDROID_SDK_URL} \d
+RUN wget ${ANDROID_SDK_URL} \
     -O sdk.zip \
     && unzip sdk.zip -d ${ANDROID_HOME} \
     && rm sdk.zip

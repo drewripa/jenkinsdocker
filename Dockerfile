@@ -2,7 +2,7 @@ FROM openjdk:8-slim
 MAINTAINER Andrew Ripa <ripa.andrew@gmail.com>
 
 USER root
-
+RUN whoami
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install wget git sudo
 
@@ -12,7 +12,7 @@ RUN usermod -aG sudo jenkins
 RUN echo "jenkins ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER jenkins
-
+RUN whoami
 ENV ANDROID_SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip"
 ENV ANDROID_SDK_LICENSE="\nd56f5187479451eabf01fb78af6dfcb131a6481e"
 ENV ANDROID_HOME=/androidhome
@@ -29,6 +29,7 @@ USER root
 RUN echo ${ANDROID_SDK_LICENSE} > "${ANDROID_HOME}/licenses/android-sdk-license"
 
 USER jenkins
+RUN whoami
 
 RUN sudo ${ANDROID_HOME}/tools/bin/sdkmanager --verbose \
     "platform-tools"

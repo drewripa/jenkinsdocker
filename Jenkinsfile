@@ -24,7 +24,8 @@ pipeline {
         }
         steps {
               sh "git clone https://github.com/codepath/android_hello_world.git /android/src"
-              sh "cd /android/src && sudo /android/src/gradlew assembleRelease"
+              sh "cd /android/src"
+              sh "sudo /android/src/gradlew assembleRelease"
         }
       }
     }

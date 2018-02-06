@@ -20,8 +20,8 @@ ENV ANDROID_HOME=/androidhome
 RUN sudo mkdir -p "${ANDROID_HOME}/licenses"
 RUN sudo wget ${ANDROID_SDK_URL} \
     -O sdk.zip \
-    && unzip sdk.zip -d ${ANDROID_HOME} \
-    && rm sdk.zip
+    && sudo unzip sdk.zip -d ${ANDROID_HOME} \
+    && sudo rm sdk.zip
 
 RUN echo -e ${ANDROID_SDK_LICENSE} > \
     "${ANDROID_HOME}/licenses/android-sdk-license"

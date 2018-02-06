@@ -24,7 +24,7 @@ pipeline {
         }
         steps {
           dir('/android/src'){
-            sh "git clone https://github.com/codepath/android_hello_world.git"
+            sh "git clone https://github.com/codepath/android_hello_world.git /android/src"
             sh "./gradlew assembleRelease"
           }
         }

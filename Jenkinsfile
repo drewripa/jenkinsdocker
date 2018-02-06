@@ -24,7 +24,7 @@ pipeline {
         }
         steps {
               sh "git clone https://github.com/codepath/android_hello_world.git /android/src"
-              sh "pwd && uname -a && cd /android/src && ./gradlew assembleRelease"
+              sh "/android/src/gradlew assembleRelease"
         }
       }
     }

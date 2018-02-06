@@ -25,7 +25,7 @@ RUN sudo wget ${ANDROID_SDK_URL} \
 
 RUN sudo touch "${ANDROID_HOME}/licenses/android-sdk-license"
 
-USER ROOT
+USER root
 RUN echo ${ANDROID_SDK_LICENSE} > "${ANDROID_HOME}/licenses/android-sdk-license"
 
 USER jenkins

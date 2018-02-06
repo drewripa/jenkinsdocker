@@ -25,4 +25,4 @@ WORKDIR /android/src
 
 RUN groupadd -g 995 jenkins
 RUN useradd -u 997 -s "/bin/bash" -g jenkins jenkins
-RUN usermod -aG sudo
+RUN usermod -aG sudo jenkins

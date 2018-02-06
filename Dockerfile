@@ -27,4 +27,4 @@ RUN groupadd -g 995 jenkins
 RUN useradd -u 997 -s "/bin/bash" -g jenkins jenkins
 RUN usermod -aG sudo jenkins
 
-RUN chown /android* jenkins:jenkins
+RUN chown jenkins:jenkins /android*

@@ -23,7 +23,8 @@ RUN sudo wget ${ANDROID_SDK_URL} \
     && sudo unzip sdk.zip -d ${ANDROID_HOME} \
     && sudo rm sdk.zip
 
-RUN sudo touch ${ANDROID_HOME}/licenses/android-sdk-license && echo -e ${ANDROID_SDK_LICENSE} > \
+RUN sudo touch "${ANDROID_HOME}/licenses/android-sdk-license"
+RUN echo -e ${ANDROID_SDK_LICENSE} > \
     "${ANDROID_HOME}/licenses/android-sdk-license"
 
 
